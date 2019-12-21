@@ -1,0 +1,7 @@
+
+###> Script-Client ###
+/.idea/
+/.idea/*
+
+###> Archive R.A.R. ###
+/*.rar

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<!--
+ * Created by PhpStorm.
+ * User: Nemzag aka Gaz‑mên Arifi (Shkypi, 1979-09-30).
+ * Date: 2019-12-17
+ * Time: 09h09
+ * Updated:
+-->
+<html lang="zxx">
+
+<head>
+
+	<!-- Meta Information's -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html;">
+	<meta name="description" content="Personnal website">
+	<meta name="subject" content="Web Dewelopmenth">
+	<meta name="keywords" content="">
+	<meta name="author" content="Gazmen Arifi / Газмен Арифи">
+	<meta name="birthday" content="1979-09-30" scheme="YYYY-MM-DD">
+	<meta name="reply-to" content="???????@???????.com">
+	<meta name="copyright" content="Gazmen Arifi / Газмен Арифи">
+	<meta name="date" content="2019-09-15" scheme="YYYY-MM-DD">
+	<meta name="hour" content="21:41:39" scheme="HH:mm">
+	<meta name="generator" content="PhpStorm 2018.??.??">
+
+	<!-- Title -->
+	<title>Title</title>
+
+	<!-- Link's favicon -->
+	<link rel="icon" href="assets/logo/TAOTRJÃZË_BV.png">
+
+	<!-- Link's third party stylesheet  -->
+
+	<!-- Prism -->
+	<link rel="stylesheet" href="assets/css/prism/prism.css">
+
+	<link rel="stylesheet" href="assets/css/tocbot/tocbot.css">
+
+	<!-- Prettify -->
+	<link rel="stylesheet" href="assets/css/prettify/prettify.css"> <!-- Syntaxic coloration on result -->
+
+	<!-- BootStrap -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"> -->
+	<!-- <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css"> -->
+
+	<!-- Semantic -->
+	<link rel="stylesheet" href="assets/PrameVorgs/semantic-ui-css-master/semantic.min.css">
+
+	<!-- Link’s TableDatas stylesheet -->
+	<link rel="stylesheet" href="assets/js/data_tables/DataTables-1.10.18/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="assets/js/data_tables/DataTables-1.10.18/css/dataTables.semanticui.min.css">
+
+	<!-- Link's personal stylesheet -->
+	<!-- <link rel="stylesheet" href="assets/css/Nemzag/base.css"> -->
+	<link rel="stylesheet" href="assets/css/Nemzag/ueb.css">
+	<!-- <link rel="stylesheet" href="assets/css/Nemzag/debug.css"> -->
+	<!--<link rel="stylesheet" href="assets/css/Nemzag/nemzag-heading-numerotation.css">-->
+
+	<!-- Page own particular styles -->
+	<style>
+		body {
+			font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+			color: rgba(0, 0, 0, .87);
+
+			overflow-x: visible;
+		}
+	</style>
+
+	<!-- Jquery -->
+	<script src="assets/js/jquery/jquery.js"></script>
+
+</head>
+
+<body id="body" class="js-toc-content">
+
+<header><h1 id="title-h1-??">Examen terminal en Script‑Client :</h1></header>
+
+<main id="main" class="ui container">
+
+	<article id="article">
+
+		<section id="#section-table-of-contents">
+			<fieldset>
+				<legend><h2 id="title-h2-table-of-contents">
+					<a href="?#title-h2-table-of-contents">Table de's matière's :</a>
+				</h2></legend>
+
+				<div id="js-toc" class="js-toc"></div>
+			</fieldset>
+		</section>
+
+		<!-- BEGIN PRINCIPAL CONTENT -->
+
+		<section id="section-principal">
+
+			<section>
+				<fieldset>
+
+					<h3>Examen phase un&nbsp;:</h3>
+
+					<p>Il faut réussir le’s deux.</p>
+
+					<h4>50 % entrée uniquement.</h4>
+
+					<p>Nous avons un fichier CSV et une requête,</p>
+
+					<ul>
+						<li>Entrée.</li>
+						<li>Plats.</li>
+						<li>Accompagnement.</li>
+						<li>Desserts en 3 Divs Flex.</li>
+					</ul>
+
+					<p>Afficher le prix de l'addition quand on plusieurs "radio".</p>
+
+					<pre><code class="language-javascript line-numbers">
+personnes.filter($p => $p.sexe == "m")      // Tous le’s homme’s.
+personnes.find($p => $p.nom == "Dubois")    // Le 1er Dubois.
+personnes.find($p => $p.id == "p01").prenom // Le prénom de la personne avec id "p01".
+		 .push
+					</code></pre>
+					<hr>
+
+					<h3>Menu Complet : entrée + plat + accompagnement + dessert&nbsp;:</h3>
+
+					<div id="divCommandeComplete_2019_examen" style="display: flex;">
+
+						<div id="divEntree_2019_examen" style="border:1px solid black; width: 32%; margin: 1px;">
+
+						</div>
+
+						<div id="divPlatsAccompagnements_2019_examen" style="border:1px solid black; width: 32%; margin: 1px;">
+
+							<div id="divPlats_2019_examen">
+
+							</div>
+
+							<div id="divAccompagnements_2019_examen">
+
+							</div>
+						</div>
+
+						<div id="divDesserts_2019_examen" style="border:1px solid black; width: 32%; margin: 1px;">
+
+						</div>
+
+					</div>
+
+					<input type="button" id="boutonCommander_2019_examen" value="Commander">
+
+					<div id="divAffichageCommande">
+
+
+					</div>
+					<script src="js/repas_correctif.js">
+					</script>
+				</fieldset>
+			</section>
+
+			<section>
+				<fieldset>
+
+					<h3>Examen phase deux&nbsp;:</h3>
+
+					<h4>60%</h4>
+
+					<p>Un feu multicolore voiture / piéton qui alterne.<br> Avec un compteur.<br> Vert pour le’s voiture’s / rouge’s pour le’s pietons.<br> On appui sur le bouton on passe la phase orange rouge 25sec,<br> 1sec de rouge intégrale.<br> Puis ont passé à vert piéton 5s rouge voiture.<br> Puis Rouge intégrale de 1sec<br> en boucle.<br> Il suggère de faire une méthode par étape.
+					</p>
+
+					<h4>Version plush évolué.</h4>
+					<p>Le bouton clignote quand on clique.<br> Le’s lumière’s clignotent avant de passer à la autre.<br> Il ne faut pash que le’s timers se emballent si on clique successivement.
+					</p>
+
+					<div style="display: flex;">
+						<div id="voiture" style="width: 10em;">
+
+							<h4>Voiture</h4>
+
+							<div id="feuRougeVoiture" style="width: 5em; height: 5em; background-color: dimgrey; border-radius: 100%; margin-bottom: 0.5em"></div>
+
+							<div id="feuOrangeVoiture" style="width: 5em; height: 5em; background-color: dimgrey; border-radius: 100%; margin-bottom: 0.5em"></div>
+
+							<div id="feuVertVoiture" style="width: 5em; height: 5em; background-color: green; border-radius: 100%; margin-bottom: 0.5em"></div>
+						</div>
+
+						<div id="voiture" style="width: 10em;">
+
+							<h4>Piétons</h4>
+
+							<div id="feuRougePietons" style="width: 5em; height: 5em; background-color: red; border-radius: 100%; margin-bottom: 0.5em"></div>
+							<div id="feuVertPietons" style="width: 5em; height: 5em; background-color: dimgrey; border-radius: 100%; margin-bottom: 0.5em"></div>
+
+							<input type="button" id="boutonInterrupter" value="Piéton">
+						</div>
+					</div>
+
+					<script src="js/feu_correctif.js"></script>
+
+
+
+				</fieldset>
+			</section>
+
+		</section>
+		<!-- END PRINCIPAL CONTENT -->
+
+	</article>
+
+</main>
+
+<footer id="footer">
+
+	<!-- Prism -->
+	<script src="assets/js/prism/prism.js"></script>
+
+	<!-- Prettify -->
+	<script src="assets/js/prettify/prettify.js"></script>
+
+	<!-- TocBot-->
+	<script src="assets/js/tocbot/tocbot.js"></script>
+
+	<script src="assets/js/tocbot/tocbot.init.js"></script>
+
+	<!-- BootStrap -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.js"></script> -->
+	<!-- <script src="assets/PrameVorgs/semantic-ui-css-master/semantic.min.js"></script> -->
+
+	<!-- Semantic UI -->
+	<script src="assets/PrameVorgs/semantic-ui-css-master/semantic.min.js"></script>
+
+	<!-- DataTables -->
+	<script src="assets/js/data_tables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+
+	<script src="assets/js/data_tables/DataTables-1.10.18/js/dataTables.semanticui.min.js"></script>
+
+	<!-- DataTables Personal -->
+	<script src="assets/js/Nemzag/data_tables-nemzag.js"></script>
+
+	<!-- Personnal -->
+	<script src="assets/js/Nemzag/smoothscroll.js"></script>
+</footer>
+
+</body>
+
+</html>
