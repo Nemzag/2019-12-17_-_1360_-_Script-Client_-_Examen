@@ -71,14 +71,14 @@ function activationInterrupter() {
         DIV_FEU_VERT_PIETON.style.backgroundColor = "dimgrey";
     }
 
-    setTimeout(passageRougeVoitureVertPieton, 7000); // 3 sec pour test
+    setTimeout(passageRougeVoitureVertPieton, 6000); // 3 sec pour test
     function passageRougeVoitureVertPieton() {
 
         DIV_FEU_ROUGE_PIETON.style.backgroundColor = "dimgrey";
         DIV_FEU_VERT_PIETON.style.backgroundColor = "green";
     }
 
-    setTimeout(RougeVoitureRougePieton, 14000); // 7 sec pour test
+    setTimeout(RougeVoitureRougePieton, 13000); // 7 sec pour test
 
 
     function RougeVoitureRougePieton() {
@@ -93,7 +93,7 @@ function activationInterrupter() {
         DIV_FEU_VERT_PIETON.style.backgroundColor = "dimgrey";
     }
 
-    setTimeout(OrangeVoitureRougePieton, 17000); // 3 sec pour test
+    setTimeout(OrangeVoitureRougePieton, 15000); // 3 sec pour test
 
     function OrangeVoitureRougePieton() {
 
@@ -106,8 +106,8 @@ function activationInterrupter() {
         DIV_FEU_ROUGE_PIETON.style.backgroundColor = "red";
         DIV_FEU_VERT_PIETON.style.backgroundColor = "dimgrey";
     }
-git
-    setTimeout(VertVoitureRougePieton, 20000); // 3 sec pour test
+
+    setTimeout(VertVoitureRougePieton, 18000); // 3 sec pour test
 
     function VertVoitureRougePieton() {
 

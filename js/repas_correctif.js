@@ -27,6 +27,9 @@ const DIV_DESSERTS_2019_EXAMEN = document.getElementById("divDesserts_2019_exame
 const BOUTON_COMMANDER_2019_EXAMEN = document.getElementById("boutonCommander_2019_examen");
 
 const DIV_AFFICHAGE_COMMANDE = document.getElementById("divAffichageCommande");
+
+const PARAGRAPH_AFFICHAGE_PRIX = document.getElementById("paragrapheAffichagePrix");
+
 //----------------------------------------------------------------------------------------
 // init évènements…
 //----------------------------------------------------------------------------------------
@@ -57,6 +60,14 @@ let $commandeSpanEntrees = document.createElement("span");
 let $commandeSpanPlats = document.createElement("span");
 let $commandeSpanAccompagnements = document.createElement("span");
 let $commandeSpanDesserts = document.createElement("span");
+
+// Global
+let $prixUnitaireEntrees = new Number(0);
+let $prixUnitairePlats = new Number(0);
+let $prixUnitaireAccompagnements = new Number(0);
+let $prixUnitaireDesserts = new Number(0);
+
+let $sommeTotalCommande = null;
 
 //----------------------------------------------------------------------------------------
 // Outils.
@@ -94,7 +105,7 @@ function menuGeneration_2019_examen() {
 
                     let $inputEntrees_examen_2019 = document.createElement("input");
                     $inputEntrees_examen_2019.type = "radio";
-                    $inputEntrees_examen_2019.value = MENUS_ENTREES_2019_EXAMEN.nom; // Ajout de une classe.
+                    $inputEntrees_examen_2019.value = MENUS_ENTREES_2019_EXAMEN.prix; // Ajout de une classe.
                     $inputEntrees_examen_2019.name = "radio_entrees";
                     $inputEntrees_examen_2019.className = "radio-entrees";
                     $inputEntrees_examen_2019.setAttribute("title", MENUS_ENTREES_2019_EXAMEN.nom);
@@ -134,7 +145,7 @@ function menuGeneration_2019_examen() {
 
                     let $inputPlats_examen_2019 = document.createElement("input");
                     $inputPlats_examen_2019.type = "radio";
-                    $inputPlats_examen_2019.value = MENUS_PLATS_2019_EXAMEN.nom; // Ajout de une classe.
+                    $inputPlats_examen_2019.value = MENUS_PLATS_2019_EXAMEN.prix; // Ajout de une classe.
                     $inputPlats_examen_2019.name = "radio_plats";
                     $inputPlats_examen_2019.className = "radio-plats";
                     $inputPlats_examen_2019.setAttribute("title", MENUS_PLATS_2019_EXAMEN.nom);
@@ -176,7 +187,7 @@ function divAccompagnements_2019_examen() {
 
                 let $inputAccompagnements_examen_2019 = document.createElement("input");
                 $inputAccompagnements_examen_2019.type = "radio";
-                $inputAccompagnements_examen_2019.value = MENUS_ACCOMPAGNEMENTS_2019_EXAMEN.nom; // Ajout de une classe.
+                $inputAccompagnements_examen_2019.value = MENUS_ACCOMPAGNEMENTS_2019_EXAMEN.prix; // Ajout de une classe.
                 $inputAccompagnements_examen_2019.name = "radio_accompagnements";
                 $inputAccompagnements_examen_2019.className = "radio-accompagnements";
                 $inputAccompagnements_examen_2019.setAttribute("title", MENUS_ACCOMPAGNEMENTS_2019_EXAMEN.nom);
@@ -217,7 +228,7 @@ function divDesserts_2019_examen() {
 
                 let $inputDesserts_examen_2019 = document.createElement("input");
                 $inputDesserts_examen_2019.type = "radio";
-                $inputDesserts_examen_2019.value = MENUS_DESSERTS_2019_EXAMEN.nom; // Ajout de une classe.
+                $inputDesserts_examen_2019.value = MENUS_DESSERTS_2019_EXAMEN.prix; // Ajout de une classe.
                 $inputDesserts_examen_2019.name = "radio_desserts";
                 $inputDesserts_examen_2019.className = "radio-desserts";
                 $inputDesserts_examen_2019.setAttribute("title", MENUS_DESSERTS_2019_EXAMEN.nom);
@@ -245,7 +256,9 @@ function allChecked() {
 
     for (let $commandeEntreesLoop of $commandeEntrees) {
         if ($commandeEntreesLoop.checked) {
-            /* return */ $commandeSpanEntrees.innerHTML = $commandeEntreesLoop.value;
+            /* return */
+            $commandeSpanEntrees.innerHTML = $commandeEntreesLoop.title;
+            $prixUnitaireEntrees = $commandeEntreesLoop.value;
         }
     }
 
@@ -254,7 +267,9 @@ function allChecked() {
 
     for (let $commandePlatsLoop of $commandePlats) {
         if ($commandePlatsLoop.checked) {
-            /* return */ $commandeSpanPlats.innerHTML = $commandePlatsLoop.value;
+            /* return */
+            $commandeSpanPlats.innerHTML = $commandePlatsLoop.title;
+            $prixUnitairePlats = $commandePlatsLoop.value;
         }
     }
 
@@ -263,7 +278,9 @@ function allChecked() {
 
     for (let $commandeAccompagnementsLoop of $commandeAccompagnements) {
         if ($commandeAccompagnementsLoop.checked) {
-            /* return */ $commandeSpanAccompagnements.innerText = $commandeAccompagnementsLoop.value;
+            /* return */
+            $commandeSpanAccompagnements.innerText = $commandeAccompagnementsLoop.title;
+            $prixUnitaireAccompagnements = $commandeAccompagnementsLoop.value;
         }
     }
 
@@ -272,19 +289,28 @@ function allChecked() {
 
     for (let $commandeDessertsLoop of $commandeDesserts) {
         if ($commandeDessertsLoop.checked) {
-            /* return */ $commandeSpanDesserts.innerText = $commandeDessertsLoop.value;
+            /* return */
+            $commandeSpanDesserts.innerText = $commandeDessertsLoop.title;
+            $prixUnitaireDesserts = $commandeDessertsLoop.value;
         }
     }
 
     console.log($commandeSpanDesserts.innerText);
 
-   if($commandeSpanEntrees.innerText.length >= 1 &&
-       $commandeSpanPlats.innerText.length >= 1 &&
-       $commandeSpanAccompagnements.innerText.length >= 1 &&
-       $commandeSpanDesserts.innerText.length >= 1) {
+    // window.alert($prixUnitaireEntrees);
+    console.log($prixUnitaireEntrees);
+
+    $sommeTotalCommande = Number($prixUnitaireEntrees) + Number($prixUnitairePlats) + Number($prixUnitaireAccompagnements) + Number($prixUnitaireDesserts);
+
+    if ($commandeSpanEntrees.innerText.length >= 1 &&
+        $commandeSpanPlats.innerText.length >= 1 &&
+        $commandeSpanAccompagnements.innerText.length >= 1 &&
+        $commandeSpanDesserts.innerText.length >= 1) {
 
         window.alert("Activation du bouton commande, car les quatre côndimênts sont choisis.");
         BOUTON_COMMANDER_2019_EXAMEN.disabled = false;
+
+        commander_2019_examen();
     }
 }
 
@@ -292,6 +318,8 @@ function commander_2019_examen() {
 
     DIV_AFFICHAGE_COMMANDE.innerHTML = null;
 
+    BOUTON_COMMANDER_2019_EXAMEN.style.display = "none";
+    // DIV_COMMANDE_COMPLETE_2019_EXAMEN.style.display = "none";
     // window.alert(DIV_ENTREES_2019_EXAMEN);
 
     DIV_AFFICHAGE_COMMANDE.appendChild($commandeList);
@@ -303,4 +331,6 @@ function commander_2019_examen() {
     $commandeLi3.append($commandeSpanAccompagnements);
     $commandeList.append($commandeLi4);
     $commandeLi4.append($commandeSpanDesserts);
+
+    PARAGRAPH_AFFICHAGE_PRIX.innerHTML = $sommeTotalCommande.toFixed(2).toString() + "€";
 }
